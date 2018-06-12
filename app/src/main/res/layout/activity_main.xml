@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.user.food.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <!--
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/hamburger"
+            tools:ignore="MissingConstraints" />
+        -->
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text=" Food Monitoring System"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/card_view2"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="5dp"
+            card_view:cardBackgroundColor="#C1FFEE"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp"
+            card_view:contentPadding="5dp">
+
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barhijau"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar4"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@+id/simpleProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/baroren"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar7"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barmerah"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Container 1"
+                tools:ignore="MissingConstraints" />
+
+            <!--
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="100dp"
+                android:contentDescription="@null"
+                android:src="@drawable/milk"
+                tools:ignore="MissingConstraints" />
+            -->
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="305dp"
+                android:layout_marginTop="30dp"
+                tools:ignore="MissingConstraints" />
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/card_view3"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="165dp"
+            android:layout_marginEnd="5dp"
+            card_view:cardBackgroundColor="#DBFFCD"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp"
+            card_view:contentPadding="5dp">
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar8"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barmerah2"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar5"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/baroren2"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar2"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barhijau2"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Container 2"
+                tools:ignore="MissingConstraints" />
+
+            <!--ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="100dp"
+                android:contentDescription="@null"
+                android:src="@drawable/chips"
+                tools:ignore="MissingConstraints" /-->
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="305dp"
+                android:layout_marginTop="30dp"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/card_view4"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="249dp"
+            card_view:cardBackgroundColor="#CDE3FF"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp"
+            card_view:contentPadding="5dp">
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar3"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barhijau3"/>
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar6"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/baroren3"
+                tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar9"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:max="100"
+                android:progressDrawable="@drawable/barmerah3"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Container 3"
+                tools:ignore="MissingConstraints" />
+
+            <!--ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="100dp"
+                android:contentDescription="@null"
+                android:src="@drawable/chocolate"
+                tools:ignore="MissingConstraints" /-->
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="305dp"
+                android:layout_marginTop="30dp"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="305dp"
+                android:layout_marginTop="45dp"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</LinearLayout>
