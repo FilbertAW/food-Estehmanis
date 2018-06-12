@@ -1,8 +1,12 @@
 package com.example.user.food;
 
+import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.job.JobServiceEngine;
+import android.content.ComponentName;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
@@ -249,13 +253,27 @@ public class MainActivity extends AppCompatActivity {
 
         Notification.Builder notificationBuilder = new Notification.Builder(this);
 
+        Context context = getApplicationContext();
+        PackageManager pm = context.getPackageManager();
+        Intent LaunchIntent = null;
+        String mapAppName = "io.github.nelvson.finalundergradoctoturtlenokotlin";
+        String name ="";
+        try{
+            if (pm!=null){
+                ApplicationInfo app = context.getPackageManager().getApplicationInfo(mapAppName, 0);
+                name = (String) pm.getApplicationLabel(app);
+                LaunchIntent = pm.getLaunchIntentForPackage(mapAppName);
+            }
+        }catch(PackageManager.NameNotFoundException e){
+            e.printStackTrace();
+        }
 
-        //Create the intent that’ll fire when the user taps the notification//
-
-        //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.androidauthority.com/"));
-        Intent intent = new Intent(this,Main2Activity.class);
+        Intent intent = LaunchIntent;
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
+        //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.androidauthority.com/"));
+ //       Intent intent = new Intent(Intent.ACTION_MAIN);
+ //       intent.setComponent(new ComponentName("io.github.nelvson.finalundergradoctoturtlenokotlin", "io.github.nelvson.finalundergradoctoturtlenokotlin.MainActivity"));
+ //       PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         //mBuilder.setContentIntent(pendingIntent);
 
         notificationBuilder
