@@ -27,6 +27,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.ViewDebug;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 previousData = dataYangDiambil;
                 dataYangDiambil = classAmbilData.getData();
 
+
                 Log.d("data", "Previous: " + previousData[1]);
                 Log.d("data", "Current: " + dataYangDiambil[1]);
 
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 if(previousData[2] != dataYangDiambil[2] && dataYangDiambil[2]<20){
                     sendNotification(3);
                 }
+
+
                 /*
                 try {
                     Thread.sleep(10000);
@@ -104,6 +108,142 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         dataYangDiambil = classAmbilData.getData();
+
+        Button refreshButton = findViewById(R.id.Refresh_Button);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dataYangDiambil = classAmbilData.getData();
+
+                if(dataYangDiambil[0] >=50){
+                    ProgressBar bebas=(ProgressBar)findViewById(R.id.simpleProgressBar);
+                    bebas.setVisibility(View.VISIBLE);
+                    bebas.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas2=(ProgressBar)findViewById(R.id.simpleProgressBar4);
+                    bebas2.setVisibility(View.INVISIBLE);
+                    bebas2.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas3=(ProgressBar)findViewById(R.id.simpleProgressBar7);
+                    bebas3.setVisibility(View.INVISIBLE);
+                    bebas3.setProgress(dataYangDiambil[0]);
+                    TextView text1=(TextView)findViewById(R.id.textView7);
+                    text1.setText(String.valueOf(dataYangDiambil[0]+ "%"));
+                }
+                if(dataYangDiambil[0]<50&&dataYangDiambil[0]>20){
+                    ProgressBar bebas=(ProgressBar)findViewById(R.id.simpleProgressBar);
+                    bebas.setVisibility(View.INVISIBLE);
+                    bebas.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas2=(ProgressBar)findViewById(R.id.simpleProgressBar4);
+                    bebas2.setVisibility(View.VISIBLE);
+                    bebas2.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas3=(ProgressBar)findViewById(R.id.simpleProgressBar7);
+                    bebas3.setVisibility(View.INVISIBLE);
+                    bebas3.setProgress(dataYangDiambil[0]);
+                    TextView text1=(TextView)findViewById(R.id.textView7);
+                    text1.setText(String.valueOf(dataYangDiambil[0] + "%"));
+                }
+
+                if(dataYangDiambil[0]<20){
+                    ProgressBar bebas=(ProgressBar)findViewById(R.id.simpleProgressBar);
+                    bebas.setVisibility(View.INVISIBLE);
+                    bebas.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas2=(ProgressBar)findViewById(R.id.simpleProgressBar4);
+                    bebas2.setVisibility(View.INVISIBLE);
+                    bebas2.setProgress(dataYangDiambil[0]);
+                    ProgressBar bebas3=(ProgressBar)findViewById(R.id.simpleProgressBar7);
+                    bebas3.setVisibility(View.VISIBLE);
+                    bebas3.setProgress(dataYangDiambil[0]);
+                    TextView text1=(TextView)findViewById(R.id.textView7);
+                    text1.setText(String.valueOf(dataYangDiambil[0]+ "%"));
+                }
+
+                if(dataYangDiambil[1]>=50){
+                    ProgressBar bebas4=(ProgressBar)findViewById(R.id.simpleProgressBar2);
+                    bebas4.setVisibility(View.VISIBLE);
+                    bebas4.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas5=(ProgressBar)findViewById(R.id.simpleProgressBar5);
+                    bebas5.setVisibility(View.INVISIBLE);
+                    bebas5.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas6=(ProgressBar)findViewById(R.id.simpleProgressBar8);
+                    bebas6.setVisibility(View.INVISIBLE);
+                    bebas6.setProgress(dataYangDiambil[1]);
+                    TextView text2=(TextView)findViewById(R.id.textView8);
+                    text2.setText(String.valueOf(dataYangDiambil[1]+ "%"));
+                }
+                if(dataYangDiambil[1]<50&&dataYangDiambil[1]>20){
+                    ProgressBar bebas4=(ProgressBar)findViewById(R.id.simpleProgressBar2);
+                    bebas4.setVisibility(View.INVISIBLE);
+                    bebas4.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas5=(ProgressBar)findViewById(R.id.simpleProgressBar5);
+                    bebas5.setVisibility(View.VISIBLE);
+                    bebas5.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas6=(ProgressBar)findViewById(R.id.simpleProgressBar8);
+                    bebas6.setVisibility(View.INVISIBLE);
+                    bebas6.setProgress(dataYangDiambil[1]);
+                    TextView text2=(TextView)findViewById(R.id.textView8);
+                    text2.setText(String.valueOf(dataYangDiambil[1]+ "%"));
+                }
+                if(dataYangDiambil[1]<20){
+                    ProgressBar bebas4=(ProgressBar)findViewById(R.id.simpleProgressBar2);
+                    bebas4.setVisibility(View.INVISIBLE);
+                    bebas4.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas5=(ProgressBar)findViewById(R.id.simpleProgressBar5);
+                    bebas5.setVisibility(View.INVISIBLE);
+                    bebas5.setProgress(dataYangDiambil[1]);
+                    ProgressBar bebas6=(ProgressBar)findViewById(R.id.simpleProgressBar8);
+                    bebas6.setVisibility(View.VISIBLE);
+                    bebas6.setProgress(dataYangDiambil[1]);
+                    TextView text2=(TextView)findViewById(R.id.textView8);
+                    text2.setText(String.valueOf(dataYangDiambil[1]+ "%"));
+                }
+                if(dataYangDiambil[2]>=50){
+                    ProgressBar bebas7=(ProgressBar)findViewById(R.id.simpleProgressBar3);
+                    bebas7.setVisibility(View.VISIBLE);
+                    bebas7.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas8=(ProgressBar)findViewById(R.id.simpleProgressBar6);
+                    bebas8.setVisibility(View.INVISIBLE);
+                    bebas8.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas9=(ProgressBar)findViewById(R.id.simpleProgressBar9);
+                    bebas9.setVisibility(View.INVISIBLE);
+                    bebas9.setProgress(dataYangDiambil[2]);
+                    TextView text3=(TextView)findViewById(R.id.textView9);
+                    text3.setText(String.valueOf(dataYangDiambil[2] + "%"));
+                    TextView text4=(TextView)findViewById(R.id.textView10);
+                    text4.setText(String.valueOf(dataYangDiambil[3]+" left"));
+                }
+                if(dataYangDiambil[2]<50&&dataYangDiambil[2]>20){
+                    ProgressBar bebas7=(ProgressBar)findViewById(R.id.simpleProgressBar3);
+                    bebas7.setVisibility(View.INVISIBLE);
+                    bebas7.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas8=(ProgressBar)findViewById(R.id.simpleProgressBar6);
+                    bebas8.setVisibility(View.VISIBLE);
+                    bebas8.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas9=(ProgressBar)findViewById(R.id.simpleProgressBar9);
+                    bebas9.setVisibility(View.INVISIBLE);
+                    bebas9.setProgress(dataYangDiambil[2]);
+                    TextView text3=(TextView)findViewById(R.id.textView9);
+                    text3.setText(String.valueOf(dataYangDiambil[2]));
+                    TextView text4=(TextView)findViewById(R.id.textView10);
+                    text4.setText(String.valueOf(dataYangDiambil[3]+" left"));
+                }
+                if(dataYangDiambil[2]<20) {
+                    ProgressBar bebas7 = (ProgressBar) findViewById(R.id.simpleProgressBar3);
+                    bebas7.setVisibility(View.INVISIBLE);
+                    bebas7.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas8 = (ProgressBar) findViewById(R.id.simpleProgressBar6);
+                    bebas8.setVisibility(View.INVISIBLE);
+                    bebas8.setProgress(dataYangDiambil[2]);
+                    ProgressBar bebas9 = (ProgressBar) findViewById(R.id.simpleProgressBar9);
+                    bebas9.setVisibility(View.VISIBLE);
+                    bebas9.setProgress(dataYangDiambil[2]);
+                    TextView text3 = (TextView) findViewById(R.id.textView9);
+                    text3.setText(String.valueOf(dataYangDiambil[2]));
+                    TextView text4 = (TextView) findViewById(R.id.textView10);
+                    text4.setText(String.valueOf(dataYangDiambil[3] + " left"));
+                }
+            }
+        });
+
 
         if(dataYangDiambil[0] >=50){
             ProgressBar bebas=(ProgressBar)findViewById(R.id.simpleProgressBar);
